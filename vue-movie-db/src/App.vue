@@ -1,8 +1,9 @@
 <template>
   <header>
     <router-link to="/">
-        <h1><span>Vue</span>Movies</h1>
+        <h1><span>Vue</span>Moviess</h1>
     </router-link>
+    <button class="login-button">Zaloguj</button>
   </header>
   <router-view />
 </template>
@@ -38,5 +39,15 @@
       color: #42B883;
     }
   }
+  .login-button {
+  margin-left: 5px; /* Dodaj margines po lewej stronie przycisku */
+  padding: 8px 16px; /* Dostosuj wewnętrzne odstępy przycisku */
+  background-color: #42B883;
+  color: #FFF;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
 }
 </style>
