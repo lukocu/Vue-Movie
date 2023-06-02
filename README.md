@@ -12,7 +12,6 @@ MovieApp to aplikacja Vue.js, która umo¿liwia u¿ytkownikom wyszukiwanie filmów z
 
 - Vue.js: Framework JavaScript do budowania interfejsów u¿ytkownika.
 - Vue Router: Oficjalny router dla Vue.js do obs³ugi nawigacji miêdzy ró¿nymi widokami.
-- Axios: Klient HTTP oparty na obietnicach do wykonywania zapytañ API.
 - OMDb API: Otwarte API Bazy Danych Filmowych do pobierania informacji o filmach.
 
 ## Rozpoczêcie pracy
