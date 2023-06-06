@@ -6,6 +6,7 @@ import LoginService from '../views/LoginService.vue'
 import AuthorizedService from '../views/AuthorizedService.vue'
 import RegisterService from '../views/RegisterService.vue'
 
+
 const routes = [
   {
     path: '/',
@@ -36,6 +37,7 @@ const routes = [
       requiresAuth: true,
     }
   }
+
 ]
 
 const router = createRouter({

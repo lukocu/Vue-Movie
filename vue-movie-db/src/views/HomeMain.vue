@@ -5,7 +5,7 @@
         <img src="https://fwcdn.pl/fpo/63/76/106376/7115941.3.jpg" alt="Batman Poster" class="featured-img" />
         <div class="detail">
           <h3>Batman</h3>
-          <p>Batman Początek,Opowiada o dzieciństwie bohatera, jego pobycie na Dalekim Wschodzie oraz początkach działalności człowieka-nietoperza.</p>
+          <p>Batman ,Opowiada o dzieciństwie bohatera, jego pobycie na Dalekim Wschodzie oraz początkach działalności człowieka-nietoperza.</p>
         </div>
       </router-link>
     </div>
@@ -48,6 +48,8 @@
       </div>
     </div>
   </div>
+  
+  
 </template>
 
 <script>

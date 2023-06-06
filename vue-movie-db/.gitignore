@@ -21,3 +21,16 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+/node_modules # Katalog zależności npm/yarn/pnpm
+/dist # Katalog zbudowanych plików wynikowych
+/.idea # Katalog plików konfiguracyjnych IntelliJ IDEA
+/.vscode # Katalog plików konfiguracyjnych Visual Studio Code
+
+
+.DS_Store # Plik konfiguracyjny systemu macOS
+.env.local # Plik konfiguracyjny dla środowiska lokalnego
+.env..local # Pliki konfiguracyjne dla różnych środowisk lokalnych
+npm-debug.log # Logi debugowania npm
+yarn-debug.log* # Logi debugowania yarn
+yarn-error.log* # Logi błędów yarn
+pnpm-debug.log* # Logi debugowania pnpm
