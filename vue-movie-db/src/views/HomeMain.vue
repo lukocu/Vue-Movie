@@ -29,17 +29,36 @@
         </router-link>
       </div>
     </div>
+
+    <div class="suggested-movie">
+      <h2>Co dziś obejrzeć?</h2>
+      <div class="movie-container">
+        <div class="movie" v-for="suggestedMovie in filteredSuggestedMovies" :key="suggestedMovie.imdbID">
+          <router-link :to="'/movie/' + suggestedMovie.imdbID" class="movie-link">
+            <div class="product-image">
+              <img :src="suggestedMovie.Poster" alt="Movie Poster" />
+              <div class="type">{{ suggestedMovie.Type }}</div>
+            </div>
+            <div class="detail">
+              <p class="year">{{ suggestedMovie.Year }}</p>
+              <h3>{{ suggestedMovie.Title }}</h3>
+            </div>
+          </router-link>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-import env from '@/env.js'
+import { ref, onMounted, computed } from 'vue';
+import env from '@/env.js';
 
 export default {
-  setup () {
+  setup() {
     const search = ref("");
     const movies = ref([]);
+    const suggestedMovies = ref([]);
 
     const SearchMovies = () => {
       if (search.value != "") {
@@ -50,15 +69,38 @@ export default {
             search.value = "";
           });
       }
-    }
+    };
+
+    const fetchSuggestedMovies = () => {
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear();
+      const currentMonth = currentDate.getMonth() + 1;
+      const currentDay = currentDate.getDate();
+
+      const formattedDate = `${currentYear}-${currentMonth}-${currentDay}`;
+
+      fetch(`http://www.omdbapi.com/?apikey=${env.apikey}&s=popular&y=${formattedDate}`)
+        .then(response => response.json())
+        .then(data => {
+          suggestedMovies.value = data.Search;
+        });
+    };
+
+    const filteredSuggestedMovies = computed(() => {
+      return suggestedMovies.value.slice(0, 3);
+    });
+
+    onMounted(fetchSuggestedMovies);
 
     return {
       search,
       movies,
+      suggestedMovies,
+      filteredSuggestedMovies,
       SearchMovies
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -146,16 +188,26 @@ export default {
       }
     }
   }
+  .suggested-movie {
+  margin-top: 32px;
+}
 
-  .movies-list {
+.suggested-movie h2 {
+  text-align: center;
+  color: #FFF;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.movie-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px 8px;
+    margin-top: 16px;
 
     .movie {
-      max-width: 50%;
-      flex: 1 1 50%;
-      padding: 16px 8px;
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+      padding: 0 8px;
 
       .movie-link {
         display: flex;
