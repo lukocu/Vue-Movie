@@ -10,12 +10,7 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyByyQsbRH93XZCBNNOIrhJSA9y03ZD3SQY",
-  authDomain: "vue-movies-327ed.firebaseapp.com",
-  projectId: "vue-movies-327ed",
-  storageBucket: "vue-movies-327ed.appspot.com",
-  messagingSenderId: "82601817421",
-  appId: "1:82601817421:web:6a1bc15ae0b0dcbdc8b304"
+  
 };
 
  const app=initializeApp(firebaseConfig);
