@@ -6,7 +6,7 @@
       <p> <input type="password"  placeholder="Hasło" v-model="password"/></p> 
         
        <p> <button @click="register">Zarejestruj</button></p>
-       <p><button @click="signInWithGoogle">Rejestracja przy użyciu Google</button></p> 
+      
    
       <p v-if="error" class="error-message">{{ error }}</p>
       <div class="login-link">
@@ -41,9 +41,7 @@
     });
   };
   
-  const signInWithGoogle = () => {
-    // Implementacja logiki rejestracji przy użyciu Google
-  };
+
   </script>
   
   <style scoped>

@@ -8,7 +8,7 @@
       <button @click="addToFavorites(movie)" :disabled="isAddedToFavorites" class="favorite-button">
         {{ isAddedToFavorites ? 'Dodano do ulubionych' : 'Dodaj do ulubionych' }}
       </button>
-      <p v-if="isAddedToFavorites" class="success-message">Świetnie! Film został dodany do listy ulubionych filmów.</p>
+      <p v-if="showSuccessMessage" class="success-message">Świetnie! Film został dodany do ulubionych.</p>
     </div>
   </div>
 </template>
@@ -27,6 +27,7 @@ export default {
     const movie = ref({});
     const favoriteMovies = ref([]);
     const isAddedToFavorites = ref(false);
+    const showSuccessMessage = ref(false);
 
     const addToFavorites = async (movie) => {
       try {
@@ -59,6 +60,7 @@ export default {
             });
             favoriteMovies.value.push(movie);
             isAddedToFavorites.value = true; // Ustaw flagę, że film został dodany do ulubionych
+            showSuccessMessage.value = true; // Wyświetl komunikat o sukcesie
           }
         }
       } catch (error) {
@@ -78,6 +80,7 @@ export default {
       addToFavorites,
       favoriteMovies,
       isAddedToFavorites,
+      showSuccessMessage,
     };
   },
 };

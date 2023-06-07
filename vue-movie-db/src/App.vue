@@ -1,6 +1,5 @@
 <template>
   <header>
-<<<<<<< HEAD
     <div class="header-left">
       <div class="logo-container">
         <router-link to="/" class="vue-movies-link">
@@ -23,12 +22,7 @@
         <button @click="handleSignOut" class="logout-button">Wyloguj: {{ user.email }}</button>
       </span>
     </div>
-=======
-    <router-link to="/">
-        <h1><span>Vue</span>Moviess</h1>
-    </router-link>
-    <button class="login-button">Zaloguj</button>
->>>>>>> 3998c7cd9457f2e7720f09d365460cb3a6c18cda
+
   </header>
   <router-view />
 </template>
@@ -68,8 +62,7 @@ const handleSignOut = () => {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Fira Sans', sans-serif;
-<<<<<<< HEAD
-=======
+
 
   &::selection{
     background: transparentize($color: #42B883, $amount: 0.5);
@@ -105,7 +98,7 @@ const handleSignOut = () => {
   font-size: 14px;
   cursor: pointer;
 }
->>>>>>> 3998c7cd9457f2e7720f09d365460cb3a6c18cda
+
 }
 
 .auth-service-button {
